@@ -1,0 +1,107 @@
+NexoPay Blog — Casos de Éxito
+=====================================================
+
+Cómo DataFácil automatizó su proceso de validación de clientes con NexoPay
+
+DataFácil es una plataforma colombiana de crédito digital para pequeñas empresas.
+Su misión: hacer que el acceso al financiamiento sea tan simple como enviar un
+mensaje de WhatsApp. Desde su fundación en Medellín en 2021, han otorgado más de
+18,000 microcréditos a emprendedores en Colombia, México y Perú.
+
+---
+
+¿Cuál era el problema que enfrentaba DataFácil?
+
+DataFácil crecía rápido, pero su proceso de onboarding era un cuello de botella.
+Para validar la identidad de un nuevo solicitante, su equipo debía:
+
+  1. Recibir documentos por correo electrónico.
+  2. Validar manualmente en bases de datos públicas.
+  3. Esperar entre 3 y 5 días hábiles para dar una respuesta.
+
+El resultado: el 58% de los solicitantes abandonaba el proceso antes de completarlo.
+Peor aún, el equipo de riesgo dedicaba el 70% de su tiempo a tareas operativas
+en lugar de enfocarse en análisis estratégico.
+
+"Sabíamos que estábamos perdiendo clientes buenos por culpa de un proceso que
+nosotros mismos diseñamos mal. El problema no era la demanda, era nuestra
+operación", comentó Valentina Ríos, CPO de DataFácil.
+
+---
+
+La solución: NexoPay + WhatsApp
+
+DataFácil integró NexoPay para automatizar tres etapas críticas de su flujo:
+
+  * Verificación de identidad mediante documento y reconocimiento facial.
+  * Consulta automatizada de historial crediticio y antecedentes judiciales
+    en más de 40 bases de datos de Colombia, México y Perú.
+  * Firma electrónica del contrato directamente desde WhatsApp.
+
+Todo el proceso ocurre en un solo canal. El solicitante nunca necesita
+descargar una aplicación ni visitar una sucursal.
+
+---
+
+¿Cómo funciona el flujo hoy?
+
+El proceso completo toma menos de 8 minutos:
+
+  Paso 1 — El solicitante escribe al número de WhatsApp de DataFácil.
+  Paso 2 — Un chatbot guía al usuario para tomar una foto de su cédula.
+  Paso 3 — NexoPay valida la identidad en tiempo real con reconocimiento facial.
+  Paso 4 — Se consultan automáticamente las bases de antecedentes.
+  Paso 5 — Si el perfil es aprobado, el contrato llega por WhatsApp para firmar.
+  Paso 6 — El desembolso se realiza en las siguientes 2 horas.
+
+---
+
+Resultados obtenidos en los primeros 90 días
+
+  * Reducción del 61% en el tiempo promedio de onboarding
+    (de 4.2 días a menos de 8 minutos).
+
+  * Aumento del 43% en la tasa de conversión de solicitantes a clientes
+    activos.
+
+  * El equipo de riesgo redujo su carga operativa en un 65%, permitiéndoles
+    enfocarse en modelos de scoring más precisos.
+
+  * Tasa de fraude en onboarding: 0.3%, la más baja desde la fundación
+    de la empresa.
+
+"Con NexoPay pasamos de rechazar solicitudes por falta de información a
+rechazarlas únicamente por riesgo real. Esa diferencia nos cambió el negocio",
+afirmó Camilo Estrada, CEO de DataFácil.
+
+---
+
+¿Por qué WhatsApp como canal principal?
+
+DataFácil evaluó tres canales antes de decidirse por WhatsApp: app móvil
+propia, formulario web y WhatsApp. La elección fue clara por tres razones:
+
+  1. El 91% de sus usuarios ya tenía WhatsApp instalado y lo usaba a diario.
+  2. La tasa de apertura de mensajes en WhatsApp superó el 94% en las
+     primeras campañas de reactivación.
+  3. El costo de adquisición por canal fue un 38% menor que en su app propia.
+
+---
+
+Lo que viene para DataFácil y NexoPay
+
+Actualmente están desarrollando un módulo de cobranza preventiva: el sistema
+detecta cuando un cliente se acerca a su fecha de pago y le envía un mensaje
+personalizado con opciones de refinanciamiento o extensión de plazo, todo
+desde WhatsApp, sin intervención humana.
+
+La meta para el próximo año es procesar 50,000 solicitudes mensuales en tres
+países manteniendo una tasa de fraude inferior al 0.5%.
+
+---
+
+¿Quieres que NexoPay haga lo mismo por tu empresa?
+
+Descubre NexoPay para instituciones financieras y fintechs.
+Toma tu prueba gratuita hoy en www.nexopay.co y empieza a validar
+a tus usuarios con la tecnología más avanzada de la región.
