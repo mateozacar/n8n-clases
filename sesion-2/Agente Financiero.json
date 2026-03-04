@@ -1,0 +1,175 @@
+{
+  "name": "Ejemplo practico 1",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "8be2c739-8d5d-4290-87f8-8d307ceceab3",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "a7805f75-8619-4062-8a98-090477018093",
+      "name": "Webhook",
+      "webhookId": "8be2c739-8d5d-4290-87f8-8d307ceceab3"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.query.prompt }}",
+        "options": {
+          "systemMessage": "=Eres un asistente financiero encargado de crear un plan de ahorro para el usuario.\nEl usuario te va a decir cuales son sus objetivos, tiempos, ingresos y otra información relevante referente a una meta de ahorro.\n\nTu debes usar la información que te entrego el usuario para definir un plan de ahorro, definiendo\n\n- Cantidad mensual de ahorro requerida\n- Fecha proyectada de finalización\n- Recomendaciones de reducción de gastos\n\nPara la reducción de gastos, debes dirigirte a la herramienta \"supabase\" y leer la tabla. En esta tabla encontrarás toda la información de los gastos e ingresos del usuario. Tu tarea es entender los gastos del usuario y proponer recortes que podria hacer.\n\nIMPORTANTE:\n\nLa fecha de hoy es {{ DateTime.local().toFormat('cccc d LLLL yyyy') }}. Siempre toma esta fecha para el inicio de la meta de ahorro."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "5af5c7f3-e3fc-411f-8973-851ef30cdf88",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        80,
+        208
+      ],
+      "id": "933a8158-266b-4f13-ab24-5272b912c902",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "XvdR21ZUANj0HvXK",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.headers.host }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        272,
+        240
+      ],
+      "id": "0e864d08-72ee-4100-8565-c734cc0e26ce",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        560,
+        0
+      ],
+      "id": "968ce30b-bd41-4d75-9103-ebaec83e9bf2",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "transactions"
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        448,
+        208
+      ],
+      "id": "fb84e58c-7a3f-43fb-9765-f0733f6358ff",
+      "name": "Get many rows in Supabase",
+      "credentials": {
+        "supabaseApi": {
+          "id": "QWIrRYzJrf6ZG1sd",
+          "name": "Supabase account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many rows in Supabase": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "453cdaae-2519-40d0-b396-fdb63be7a814",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "cdfafbaaa7508f3f85eff49f649e57814142944c298a0e0e96dc651d0a97761c"
+  },
+  "id": "YCrvnKD2EV4hjINz",
+  "tags": []
+}
